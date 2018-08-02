@@ -18,7 +18,7 @@
                 </div>
             @endif
             {{ Form::open(array('url' => route('register'), 'class' => 'form-horizontal form-signin','files' => true)) }}
-            {!! csrf_field() !!}
+            {!! csrf_field()!!}
 
             <div class="form-group  {{ $errors->has('first_name') ? 'has-error' : ''}}">
                 <label for="first_name" class="cols-sm-2 control-label">First Name</label>

@@ -14,7 +14,7 @@
 Route::auth();
 Route::post('user-info','UserInfoConntroller@store')->name('UserInfo')->middleware('auth');
 Route::get('add-user-info','UserInfoConntroller@GetUserInfo')->name('GetUserInfo')->middleware('auth');
-Route::get('/', ['uses' => 'HomeController@home']);
+Route::get('/', ['uses' => 'HomeController@home'])->name('index');
 Route::get('qrLogin', ['uses' => 'QrLoginController@index']);
 Route::get('qrLogin-option1', ['uses' => 'QrLoginController@indexoption2']);
 Route::post('qrLogin', ['uses' => 'QrLoginController@checkUser']);

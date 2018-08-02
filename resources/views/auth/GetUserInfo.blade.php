@@ -41,7 +41,7 @@
             </div>
 
             <div class="form-group  {{ $errors->has('address') ? 'has-error' : ''}}">
-                <label for="address" class="cols-sm-2 control-label">Address</label>
+                <label for="address" class="cols-sm-2 control-label">Country Address</label>
                 <div class="cols-sm-10">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
@@ -52,11 +52,11 @@
             </div>
 
             <div class="form-group  {{ $errors->has('hamlaName') ? 'has-error' : ''}}">
-                <label for="hajAddress" class="cols-sm-2 control-label">Country address</label>
+                <label for="hajAddress" class="cols-sm-2 control-label"> Camp address</label>
                 <div class="cols-sm-10">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-map" aria-hidden="true"></i></span>
-                        {!! Form::text('hajAddress', null, ['class' => 'form-control','placeholder '=>'hajAddress']) !!}
+                        {!! Form::text('hajAddress', null, ['class' => 'form-control','placeholder '=>'Camp Address']) !!}
 
                     </div>
                     {!! $errors->first('hajAddress', '<p class="help-block">:message</p>') !!}

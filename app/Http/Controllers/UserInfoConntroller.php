@@ -41,7 +41,7 @@ class UserInfoConntroller extends Controller
         }
         $userInfo->avatar=$filename;
         $userInfo->save();
-return redirect()->back();
+return redirect()->route('index');
     }
     public function GetUserInfo()
     {

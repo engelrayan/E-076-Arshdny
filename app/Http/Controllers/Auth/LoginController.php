@@ -73,8 +73,8 @@ class LoginController extends Controller
             }
             $remember = (Input::get('remember') == 'on') ? true : false;
             if ($user = Sentinel::authenticate($request->all(), $remember)) {
-                
-                   return redirect('dashboard');
+
+                   return redirect()->route('GetUserInfo');
 
             }
 
