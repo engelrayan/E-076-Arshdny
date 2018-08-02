@@ -1,0 +1,191 @@
+.wrapper {    
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+
+.form-signin {
+  max-width: 420px;
+  padding: 30px 38px 66px;
+  margin: 0 auto;
+  background-color: #eee;
+  border: 3px dotted rgba(0,0,0,0.1);  
+  }
+
+.form-signin-heading {
+  text-align:center;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+
+
+input[type="password"] {
+    width: 100%;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+}
+
+.colorgraph {
+  height: 7px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+.form-group .profile-img {
+  max-height: 220px;
+  overflow: hidden;
+  max-width: 220px;
+  border-radius: 5px;
+  position: relative;
+  border: 1px solid #dfdfdf;
+}
+
+.form-group .profile-img img {
+  max-width: 220px;
+  height: 220px;
+  width: 220px;
+}
+
+.form-group .profile-img .img-edit-caption {
+  position: absolute;
+  z-index: 11;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  padding: 0 10px 10px;
+}
+
+.form-group .profile-img .img-edit-caption .btn-file {
+  background-color: #8e97a0 !important;
+  border: 0;
+  padding: 8px 12px;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #1f2227;
+  line-height: normal;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  letter-spacing: 0;
+  height: auto;
+  -webkit-box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.32);
+}
+
+.form-group .profile-img .btn-file {
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+
+.form-group .profile-img .btn-file > input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: translate(-300px, 0) scale(4);
+  -ms-transform: translate(-300px, 0) scale(4);
+  transform: translate(-300px, 0) scale(4);
+  font-size: 23px;
+  direction: ltr;
+  cursor: pointer;
+}
+.user-inner {
+  padding: 50px;
+  /*    width: calc(100% - 250px);*/
+  transition: all .3s;
+  /*    margin-left: 250px; */
+  float: left;
+  width: 100%;
+}
+
+.big-wrap.hatched .user-inner {
+  margin-left: 0;
+  width: 100%;
+  transition: all .3s;
+}
+.card {
+  float: left;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 0px 20px 3px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  border: 1px solid #e6ecf5;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.pre-inner {
+  background: -webkit-linear-gradient(right bottom, #0573a7 50%, #1f2227 50%);
+  background: linear-gradient(right bottom, rgba(91, 155, 255, 0.08) 50%, #1f2227 50%);
+  padding: 10px;
+  border-radius: 5px;
+  float: left;
+  width: 100%;
+}
+
+
+
+.pre-form.scaled {
+  position: relative;
+  transform: scale(1);
+  transition: all 1s;
+}
+
+.pre-form .form-group label {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.pre-form .form-group .form-control {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.pre-form .form-group .form-control[disabled] {
+  background-color:  white;
+  border-color: #1f2227;
+  color: #000;
+  font-size: 20px;
+  font-family: bold;
+}
+
+@media(max-width:425px) {
+  .pre-data {
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+    float: left;
+  }
+  .pre-img {
+    overflow: hidden;
+    max-width: 100%;
+    float: none;
+    margin-right: 0;
+  }
+
+  .pre-inner {
+    background: -webkit-linear-gradient(bottom, #ffab00 50%, #1f2227 50%);
+    background: linear-gradient(bottom, #ffab00 50%, #1f2227 50%);
+  }
+}
+
+.pre-form .form-group.lasty {
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
