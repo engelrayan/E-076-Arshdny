@@ -14,24 +14,25 @@ class UserInfoConntroller extends Controller
             'hajNumber' => 'required|min:3|max:50',
             'boardNumber' => 'required|min:3|max:50',
             'address' => 'required|min:3|max:50',
-            'hajAddress' => 'required|min:3|max:50',
             'hamlaName' => 'required|min:3|max:50',
             'hamlaNumber' => 'required|min:3|max:50',
             'hamlaContact' => 'required|min:3|max:50',
             'healty' => 'min:3|max:50',
             'avatar' => 'required',
-
+            'lat'=>'required',
+            'long'=>'required',
         ]);
         $userInfo=new UserInfo();
             $userInfo->user_id = Sentinel::getUser()->id;
         $userInfo->hajNumber=$request->input('hajNumber');
         $userInfo->boardNumber=$request->input('boardNumber');
         $userInfo->address=$request->input('address');
-        $userInfo->hajAddress=$request->input('hajAddress');
         $userInfo->hamlaName=$request->input('hamlaName');
         $userInfo->hamlaNumber=$request->input('hamlaNumber');
         $userInfo->hamlaContact=$request->input('hamlaContact');
         $userInfo->healty=$request->input('healty');
+        $userInfo->lat=$request->input('lat');
+        $userInfo->long=$request->input('long');
         if ($request->file('avatar')) {
             $file = $request->file('avatar');
             $destinationPath = 'public/images';

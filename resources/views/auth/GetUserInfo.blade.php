@@ -1,3 +1,23 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+      integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+      crossorigin=""/>
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+        integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+        crossorigin=""></script>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<style type="text/css">
+    #mapid { height: 400px;width: 800px; }
+</style>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
 @extends('frontLayout.app')
 @section('title')
     Register
@@ -53,13 +73,10 @@
 
             <div class="form-group  {{ $errors->has('hamlaName') ? 'has-error' : ''}}">
                 <label for="hajAddress" class="cols-sm-2 control-label"> Camp address</label>
-                <div class="cols-sm-10">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-map" aria-hidden="true"></i></span>
-                        {!! Form::text('hajAddress', null, ['class' => 'form-control','placeholder '=>'Camp Address']) !!}
-
-                    </div>
-                    {!! $errors->first('hajAddress', '<p class="help-block">:message</p>') !!}
+                <div class="row">
+                    <div id="mapid" style="height: 250px;width: 400px"></div>
+                    <input type="hidden" name="lat" id="lat" value="">
+                    <input type="hidden" name="long" id="lng" value="">
                 </div>
             </div>
 
@@ -168,4 +185,44 @@
         }
 
     }
+</script>
+
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBpgW6meI9geWvt-7ZolYr7oxJqJuJmLQI"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js">
+</script>
+<script type="text/javascript">
+
+    navigator.geolocation.getCurrentPosition(function(location) {
+        var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude),
+            mymap = L.map('mapid').setView(latlng, 16);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+            maxZoom: 20,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
+        }).addTo(mymap);
+        var markerIcon = L.icon({
+            iconUrl: "/images/map_marker.png",
+            iconSize: [48, 48],
+            className: 'animated-icon my-icon-id'
+        });
+        var marker = L.marker((latlng),{draggable : true,icon: markerIcon}).addTo(mymap);
+
+        marker.bindTooltip("choose your Camp").openTooltip();
+        marker.on('move',function (e) {
+            var LatLong = marker.getLatLng();
+            var lat = LatLong['lat'];
+            var lng = LatLong['lng'];
+            $('#lat').val(lat);
+            $('#lng').val(lng);
+            console.log(lat, lng);
+        });
+    });
+    //     var popup = L.popup()
+    //         .setLatLng([31.205753, 29.924526])
+    //         .setContent('<a href="http://google.com">hello</a>')
+    //         .openOn(mymap);
+
+
 </script>
